@@ -1,11 +1,11 @@
 const allPost = document.querySelectorAll('.post-before-mark');
 const markAsRead = document.getElementById('markCount');
 
-let count = 0;
 allPost.forEach((post) => {
     post.addEventListener('click', function () {
+        let count = 0;
         count = count + 1;
-        const markCount = parseInt(markAsRead.innerText) + count;
-        console.log(markCount);
+        const totalPost=parseInt(markAsRead.innerText)+count;
+        markAsRead.innerText=totalPost;
     })
 })
