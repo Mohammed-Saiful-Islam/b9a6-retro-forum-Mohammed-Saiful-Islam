@@ -32,6 +32,7 @@
 
 <body>
     <header class="">
+        <!-- section navbar start -->
         <section class="">
             <nav class="w-[90%] max-w-[1171px]  my-0 mx-auto mt-3 md:mt-6 lg:mt-9">
                 <div class="navbar bg-base-100 gap-2 flex flex-col md:flex-row lg:flex-row">
@@ -69,6 +70,8 @@
                 </div>
             </nav>
         </section>
+        <!-- section navbar end -->
+        <!-- section banner start -->
         <section class="">
             <div class="w-[90%] max-w-[1171px]  my-0 mx-auto mt-3 md:mt-9 lg:mt-12 ">
                 <div class="hero bg-[#12132D] rounded-3xl">
@@ -118,15 +121,18 @@
                                 class="py-6 mulish-font text-sm md:text-base lg:text-xl text-[#FFFFFFCC] font-medium text-center lg:text-left">
                                 Share your favorite opinion
                                 and win and wp forum coffee mug!</p>
-                            <div class="bg-white text-center rounded-full "><input
+                            <div class="bg-white text-center rounded-full "><input id="input-area"
+                                    placeholder="Search here anything"
                                     class=" bg-white rounded-full border-none lg:w-[80%]" type="text"> <button
-                                    class="btn-xs sm:btn-sm md:btn-md bg-[#797DFC] text-white rounded-full btn btn-primary">Get
-                                    Started</button></div>
+                                    id="input-btn"
+                                    class="btn-xs sm:btn-sm md:btn-md bg-[#797DFC] text-white rounded-full btn btn-primary">Search</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- section banner end -->
     </header>
     <main>
         <!-- section discuss start -->
@@ -141,7 +147,8 @@
             </div>
             <div class="w-[90%] max-w-[1171px] my-0 mx-auto mt-3 md:mt-6 lg:mt-12">
                 <div class="flex flex-col lg:flex-row justify-center lg:gap-4 space-y-3 lg:space-y-0">
-                    <div class="flex bg-[#797DFC1A] w-full p-2 rounded-3xl  lg:w-[60%] lg:flex-1">
+                    <!-- section post-before-mark start -->
+                    <div class="post-before-mark flex bg-[#797DFC1A] w-full p-2 rounded-3xl  lg:w-[60%] lg:flex-1">
                         <div>
                             <div class="w-[50%] lg:w-[40%]">
                                 <div class="max-w-3 min-h-3 lg:max-w-6 lg:min-h-6 rounded-full bg-green-600"></div>
@@ -156,7 +163,7 @@
                                     </p>
                                 </div>
                                 <div>
-                                    <h3 class="mulish font text-xl font-bold">10 Kids Unaware of Their Halloween
+                                    <h3 class="post-title1 mulish font text-xl font-bold">10 Kids Unaware of Their Halloween
                                         Constume
                                     </h3>
                                     <p class="inter-font text-base font-normal ">
@@ -180,7 +187,7 @@
                                         <img src="./images/eye.png" alt="">
                                     </div>
                                     <div>
-                                        <p class="inter-font text-base font-normal">1568</p>
+                                        <p class="post-viewer1 inter-font text-base font-normal">1568</p>
                                     </div>
                                 </div>
                                 <div class="flex flex-col md:flex-row lg:flex-row gap-2">
@@ -194,6 +201,8 @@
                             </div>
                         </div>
                     </div>
+                    <!-- section post-before-mark end -->
+                    <!-- section mark start -->
                     <!-- bg-[#12132d0d] -->
                     <div class="bg-gray-700 lg:w-[30%] p-4 rounded-3xl space-y-3 lg:flex-2">
                         <div class="flex justify-between">
@@ -205,25 +214,26 @@
                                     <img src="./images/tick.png" alt="">
                                 </div>
                                 <div>
-                                    <p class="text-white inter-font text-base font-normal">Mark as read ( <span>0</span>
+                                    <p class="text-white inter-font text-base font-normal">Mark as read ( <span id="markCount">0</span>
                                         )</p>
                                 </div>
                             </div>
                         </div>
                         <div class="flex justify-between bg-white rounded-xl p-2 items-center">
                             <div>
-                                <p class="mulish-font text-base font-semibold text-black">10 Kids Unaware of Their
+                                <p class="post-title2 mulish-font text-base font-semibold text-black">10 Kids Unaware of Their
                                     Halloween
                                     Costume</p>
                             </div>
                             <div class="flex flex-col lg:flex-row min-w-[25%] gap-1 items-center">
                                 <div><img src="./images/eye.png" alt=""></div>
                                 <div>
-                                    <p class="text-black">1568</p>
+                                    <p class="post-view2 text-black">1568</p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- section mark end -->
                 </div>
             </div>
         </section>
@@ -295,7 +305,8 @@
                 <aside>
                     <img src="./images/logo.png" alt="">
                     <p class="mulish-font text-base font-normal lg:w-[50%]">
-                        Contrary to popular belief, Lorem Inpsum is not simply random text, It has roots in a piece of classical Latin literature from 45 BC
+                        Contrary to popular belief, Lorem Inpsum is not simply random text, It has roots in a piece of
+                        classical Latin literature from 45 BC
                     </p>
                 </aside>
                 <nav>
