@@ -6,6 +6,92 @@ const postView = document.getElementById('post-view');
 const viewEye = document.getElementById('eye');
 
 const markedPostContaier = document.getElementById('markedPostContainer');
+const postBeforeMarkContainer=document.getElementById('post-before-mark-container');
+
+const loadPosts = async () => {
+    
+    const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts');
+    const data =await res.json();
+    const allPosts=data.posts;
+    // console.log(allPosts);
+    
+    allPosts.forEach((post)=>{
+        console.log(post);
+        const div=document.createElement('div');
+        div.innerHTML=`
+        <div class="flex">
+                                <div class="">
+                                    <div class="w-[50%] lg:w-[40%]">
+                                        <div class="max-w-3 min-h-3 lg:max-w-6 lg:min-h-6 rounded-full bg-green-600">
+                                        </div>
+                                        <img class="w-full" src="./images/joinforum.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="divide-y-2 divide-dashed space-y-3">
+                                    <div>
+                                        <div class="">
+                                            <p class="space-x-3 inter-font text-base font-medium">
+                                                <span># Music</span><span>Author:</span> <span>Awlad Hossain</span>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <h3 id="post-title" class=" mulish font text-xl font-bold">10 Kids Unaware
+                                                of Their
+                                                Halloween
+                                                Constume
+                                            </h3>
+                                            <p class="inter-font text-base font-normal ">
+                                                It's one things to subject yourself to the Halloween costume mushap
+                                                because hey
+                                                that's
+                                                your prerogative
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <div class="flex gap-2 mt-2">
+                                            <div class="flex flex-col md:flex-row lg:flex-row gap-2">
+                                                <div>
+                                                    <img src="./images/message-2.png" alt="">
+                                                </div>
+                                                <div>
+                                                    <p class="inter-font text-base font-normal">560</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-col md:flex-row lg:flex-row gap-2">
+                                                <div>
+                                                    <img id="eye" src="./images/eye.png" alt="">
+                                                </div>
+                                                <div>
+                                                    <p id="post-view" class=" inter-font text-base font-normal">1568</p>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-col md:flex-row lg:flex-row gap-2">
+                                                <div>
+                                                    <img src="./images/time.png" alt="">
+                                                </div>
+                                                <div>
+                                                    <p class="inter-font text-base font-normal"><span>5</span>
+                                                        <span>min</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-2">
+                                            <button class="mark-btn rounded-full btn-xm
+                                     p-0 py-0 px-0">
+                                                <div class="rounded-full"><img class="w-full rounded-full"
+                                                        src="./images/email .png" alt=""></div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        `
+        postBeforeMarkContainer.appendChild(div);
+    })
+}
+loadPosts();
 
 allMarkBtn.forEach((post) => {
     post.addEventListener('click', function () {
