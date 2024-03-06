@@ -1,14 +1,21 @@
 /* const allMarkBtn = document.querySelectorAll('.mark-btn'); */
+const inputBtn=document.getElementById('input-btn');
+
 const markAsRead = document.getElementById('markCount');
 
 const postTitle = document.getElementsByClassName('post-title');
 const postView = document.getElementsByClassName('post-view');
 const viewEye = document.querySelectorAll('#eye');
 
-
 const markedPostContaier = document.getElementById('markedPostContainer');
 const postBeforeMarkContainer = document.getElementById('post-before-mark-container');
 const latestPostsContainer = document.getElementById('latest-posts-container');
+
+inputBtn.addEventListener('click',()=>{
+    const inputArea=document.getElementById('input-area')
+    const inputText=inputArea.value;
+    console.log(inputText);
+})
 
 const loadPosts = async () => {
 
