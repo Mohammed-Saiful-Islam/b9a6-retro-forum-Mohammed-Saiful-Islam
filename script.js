@@ -20,32 +20,25 @@ const loadPosts = async () => {
         console.log(post);
         const div = document.createElement('div');
         div.innerHTML = `
-        <div class="flex bg-[#797DFC1A]">
+        <div class="flex bg-[#797DFC1A] gap-2 p-2">
                                 <div class="">
-                                    <div class="w-[50%] lg:w-[40%]">
+                                    <div class="">
                                         <div class="max-w-3 min-h-3 lg:max-w-6 lg:min-h-6 rounded-full bg-green-600">
                                         </div>
-                                        <img class="w-full" src="./images/joinforum.png" alt="">
+                                        <img class="w-[100px] rounded-full" src="${post.image}" alt="">
                                     </div>
                                 </div>
-                                <div class="divide-y-2 divide-dashed space-y-3">
+                                <div class="divide-y-2 divide-dashed space-y-3 w-full">
                                     <div>
                                         <div class="">
                                             <p class="space-x-3 inter-font text-base font-medium">
-                                                <span># Music</span><span>Author:</span> <span>Awlad Hossain</span>
+                                                <span>#${post.category}</span><span>Author:</span> <span>${post.author.name}</span>
                                             </p>
                                         </div>
                                         <div>
-                                            <h3 id="post-title" class=" mulish font text-xl font-bold">10 Kids Unaware
-                                                of Their
-                                                Halloween
-                                                Constume
+                                            <h3 id="post-title" class=" mulish font text-xl font-bold">${post.title}
                                             </h3>
-                                            <p class="inter-font text-base font-normal ">
-                                                It's one things to subject yourself to the Halloween costume mushap
-                                                because hey
-                                                that's
-                                                your prerogative
+                                            <p class="inter-font text-base font-normal ">${post.description}
                                             </p>
                                         </div>
                                     </div>
@@ -56,7 +49,7 @@ const loadPosts = async () => {
                                                     <img src="./images/message-2.png" alt="">
                                                 </div>
                                                 <div>
-                                                    <p class="inter-font text-base font-normal">560</p>
+                                                    <p class="inter-font text-base font-normal">${post.comment_count}</p>
                                                 </div>
                                             </div>
                                             <div class="flex flex-col md:flex-row lg:flex-row gap-2">
@@ -64,7 +57,7 @@ const loadPosts = async () => {
                                                     <img id="eye" src="./images/eye.png" alt="">
                                                 </div>
                                                 <div>
-                                                    <p id="post-view" class=" inter-font text-base font-normal">1568</p>
+                                                    <p id="post-view" class=" inter-font text-base font-normal">${post.view_count}</p>
                                                 </div>
                                             </div>
                                             <div class="flex flex-col md:flex-row lg:flex-row gap-2">
@@ -72,7 +65,7 @@ const loadPosts = async () => {
                                                     <img src="./images/time.png" alt="">
                                                 </div>
                                                 <div>
-                                                    <p class="inter-font text-base font-normal"><span>5</span>
+                                                    <p class="inter-font text-base font-normal"><span>${post.posted_time}</span>
                                                         <span>min</span>
                                                     </p>
                                                 </div>
@@ -133,8 +126,8 @@ const latestPosts = async () => {
 
     allLatestPosts.forEach(latestPost => {
         // console.log(latestPost);
-        const div=document.createElement('div');
-        div.innerHTML=`
+        const div = document.createElement('div');
+        div.innerHTML = `
                         <div class="w-full rounded-full">
                             <img class="w-full rounded-xl" src="${latestPost.cover_image}" alt="">
                         </div>
@@ -142,7 +135,7 @@ const latestPosts = async () => {
                             <div class="flex items-center">
                                 <div class="rounded-full p-2"><img src="./images/calender.png" alt=""></div>
                                 <div>
-                                    <p class="mulish-font text-base font-normal">${latestPost.author.posted_date?latestPost.author.posted_date:'no publish date'}</p>
+                                    <p class="mulish-font text-base font-normal">${latestPost.author.posted_date ? latestPost.author.posted_date : 'no publish date'}</p>
                                 </div>
                             </div>
                             <div>
@@ -154,7 +147,7 @@ const latestPosts = async () => {
                             <div class="w-[100px] rounded-full p-2"><img class="w-full rounded-full" src="${latestPost.profile_image}" alt=""></div>
                             <div class="">
                                 <h3 class="mulish-font text-base font-bold">${latestPost.author.name}</h3>
-                                <p class="mulish-font text-sm font-normal">${latestPost.author.designation?latestPost.author.designation:'Unknown'}</p>
+                                <p class="mulish-font text-sm font-normal">${latestPost.author.designation ? latestPost.author.designation : 'Unknown'}</p>
                             </div>
                         </div>
         `
