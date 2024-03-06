@@ -136,33 +136,30 @@ const latestPosts = async () => {
         console.log(latestPost);
         const div=document.createElement('div');
         div.innerHTML=`
-        <div class="lg:w-[30%]">
-                        <div class="w-full">
-                            <img class="w-full" src="./images/joinforum.png" alt="">
+                        <div class="w-full rounded-full">
+                            <img class="w-full" src="${latestPost.cover_image}" alt="">
                         </div>
                         <div>
                             <div class="flex items-center">
                                 <div class="rounded-full p-2"><img src="./images/calender.png" alt=""></div>
                                 <div>
-                                    <p class="mulish-font text-base font-normal">24 janurary 2024</p>
+                                    <p class="mulish-font text-base font-normal">${latestPost.author.posted_date?latestPost.author.posted_date:'no publish date'}</p>
                                 </div>
                             </div>
                             <div>
-                                <h2 class="mulish-font text-xl font-extrabold">What will a mars habitat force that
-                                    impact in our daily life</h2>
-                                <p class="mulish-font text-base font-normal">Yes, you can run unit tests and view the
-                                    results directly within the app</p>
+                                <h2 class="mulish-font text-xl font-extrabold">${latestPost.title}</h2>
+                                <p class="mulish-font text-base font-normal">${latestPost.description}</p>
                             </div>
                         </div>
                         <div class="flex items-center">
-                            <div><img src="./images/author.png" alt=""></div>
+                            <div class="w-[100px] rounded-full p-2"><img class="w-full" src="${latestPost.profile_image}" alt=""></div>
                             <div class="">
                                 <h3 class="mulish-font text-base font-bold">Dianne Russell</h3>
                                 <p class="mulish-font text-sm font-normal">ROR Devoloper</p>
                             </div>
                         </div>
-                    </div>
         `
+        div.classList.add('w-[325px]')
         latestPostsContainer.appendChild(div)
     })
 }
