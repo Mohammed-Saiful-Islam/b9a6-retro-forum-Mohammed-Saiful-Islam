@@ -1,9 +1,10 @@
-const allMarkBtn = document.querySelectorAll('.mark-btn');
+/* const allMarkBtn = document.querySelectorAll('.mark-btn'); */
 const markAsRead = document.getElementById('markCount');
 
-const postTitle = document.querySelectorAll('#post-title');
-const postView = document.querySelectorAll('#post-view');
+const postTitle = document.getElementsByClassName('post-title');
+const postView = document.getElementsByClassName('post-view');
 const viewEye = document.querySelectorAll('#eye');
+
 
 const markedPostContaier = document.getElementById('markedPostContainer');
 const postBeforeMarkContainer = document.getElementById('post-before-mark-container');
@@ -17,7 +18,7 @@ const loadPosts = async () => {
     // console.log(allPosts);
 
     allPosts.forEach((post) => {
-        console.log(post);
+        // console.log(post);
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="flex bg-[#797DFC1A] gap-2 p-2">
@@ -36,7 +37,7 @@ const loadPosts = async () => {
                                             </p>
                                         </div>
                                         <div>
-                                            <h3 id="post-title" class=" mulish font text-xl font-bold">${post.title}
+                                            <h3 id="" class="post-title mulish font text-xl font-bold">${post.title}
                                             </h3>
                                             <p class="inter-font text-base font-normal ">${post.description}
                                             </p>
@@ -57,7 +58,7 @@ const loadPosts = async () => {
                                                     <img id="eye" src="./images/eye.png" alt="">
                                                 </div>
                                                 <div>
-                                                    <p id="post-view" class=" inter-font text-base font-normal">${post.view_count}</p>
+                                                    <p id="" class="post-view inter-font text-base font-normal">${post.view_count}</p>
                                                 </div>
                                             </div>
                                             <div class="flex flex-col md:flex-row lg:flex-row gap-2">
@@ -84,6 +85,7 @@ const loadPosts = async () => {
         `
         postBeforeMarkContainer.appendChild(div);
     });
+
     const allMarkBtn = document.querySelectorAll('.mark-btn');
     allMarkBtn.forEach((post) => {
         post.addEventListener('click', function () {
@@ -92,10 +94,15 @@ const loadPosts = async () => {
             const totalPost = parseInt(markAsRead.innerText) + count;
             markAsRead.innerText = totalPost;
 
+            const postTitle = document.getElementsByClassName('post-title');
+            const postView = document.getElementsByClassName('post-view');
+            console.log(postTitle.innerText);
+            console.log(postView.innerText);
+         
             const postTitleText = postTitle.innerText;
             const postViewNum = postView.innerText;
-            console.log(postTitleText);
-            console.log(postViewNum);
+            // console.log(postTitleText);
+            // console.log(postViewNum);
 
             const div = document.createElement('div');
             const p1 = document.createElement('p');
