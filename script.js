@@ -137,7 +137,7 @@ const latestPosts = async () => {
         const div=document.createElement('div');
         div.innerHTML=`
                         <div class="w-full rounded-full">
-                            <img class="w-full" src="${latestPost.cover_image}" alt="">
+                            <img class="w-full rounded-xl" src="${latestPost.cover_image}" alt="">
                         </div>
                         <div>
                             <div class="flex items-center">
@@ -152,10 +152,10 @@ const latestPosts = async () => {
                             </div>
                         </div>
                         <div class="flex items-center">
-                            <div class="w-[100px] rounded-full p-2"><img class="w-full" src="${latestPost.profile_image}" alt=""></div>
+                            <div class="w-[100px] rounded-full p-2"><img class="w-full rounded-full" src="${latestPost.profile_image}" alt=""></div>
                             <div class="">
-                                <h3 class="mulish-font text-base font-bold">Dianne Russell</h3>
-                                <p class="mulish-font text-sm font-normal">ROR Devoloper</p>
+                                <h3 class="mulish-font text-base font-bold">${latestPost.author.name}</h3>
+                                <p class="mulish-font text-sm font-normal">${latestPost.author.designation?latestPost.author.designation:'Unknown'}</p>
                             </div>
                         </div>
         `
