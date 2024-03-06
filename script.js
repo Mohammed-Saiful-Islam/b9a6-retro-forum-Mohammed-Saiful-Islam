@@ -1,9 +1,9 @@
 const allMarkBtn = document.querySelectorAll('.mark-btn');
 const markAsRead = document.getElementById('markCount');
 
-const postTitle = document.getElementById('post-title');
-const postView = document.getElementById('post-view');
-const viewEye = document.getElementById('eye');
+const postTitle = document.querySelectorAll('#post-title');
+const postView = document.querySelectorAll('#post-view');
+const viewEye = document.querySelectorAll('#eye');
 
 const markedPostContaier = document.getElementById('markedPostContainer');
 const postBeforeMarkContainer = document.getElementById('post-before-mark-container');
@@ -91,10 +91,12 @@ const loadPosts = async () => {
             count = count + 1;
             const totalPost = parseInt(markAsRead.innerText) + count;
             markAsRead.innerText = totalPost;
-    
+
             const postTitleText = postTitle.innerText;
             const postViewNum = postView.innerText;
-    
+            console.log(postTitleText);
+            console.log(postViewNum);
+
             const div = document.createElement('div');
             const p1 = document.createElement('p');
             p1.innerText = postTitleText;
@@ -115,12 +117,12 @@ const loadPosts = async () => {
             markedPostContaier.appendChild(div);
         })
     })
-    
+
 }
 loadPosts();
 
 
-allMarkBtn.forEach((post) => {
+/* allMarkBtn.forEach((post) => {
     post.addEventListener('click', function () {
         let count = 0;
         count = count + 1;
@@ -149,7 +151,7 @@ allMarkBtn.forEach((post) => {
         div.classList.add('rounded-xl');
         markedPostContaier.appendChild(div);
     })
-})
+}) */
 
 const latestPosts = async () => {
     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
