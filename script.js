@@ -20,7 +20,7 @@ const loadPosts = async () => {
         console.log(post);
         const div = document.createElement('div');
         div.innerHTML = `
-        <div class="flex">
+        <div class="flex bg-[#797DFC1A]">
                                 <div class="">
                                     <div class="w-[50%] lg:w-[40%]">
                                         <div class="max-w-3 min-h-3 lg:max-w-6 lg:min-h-6 rounded-full bg-green-600">
@@ -95,7 +95,6 @@ const loadPosts = async () => {
 loadPosts();
 
 
-
 allMarkBtn.forEach((post) => {
     post.addEventListener('click', function () {
         let count = 0;
@@ -133,7 +132,7 @@ const latestPosts = async () => {
     const allLatestPosts = data;
 
     allLatestPosts.forEach(latestPost => {
-        console.log(latestPost);
+        // console.log(latestPost);
         const div=document.createElement('div');
         div.innerHTML=`
                         <div class="w-full rounded-full">
@@ -163,43 +162,6 @@ const latestPosts = async () => {
         latestPostsContainer.appendChild(div)
     })
 }
-// const div =document.createElement('div');
-// div.innerHTML=`
-
-// `
-// }
-// const div=document.createElement('div');
-
-
-// div.innerHTML=`
-// <div class="lg:w-[30%]">
-//                     <div class="w-full">
-//                         <img class="w-full" src="./images/joinforum.png" alt="">
-//                     </div>
-//                     <div>
-//                         <div class="flex items-center">
-//                             <div class="rounded-full p-2"><img src="./images/calender.png" alt=""></div>
-//                             <div>
-//                                 <p class="mulish-font text-base font-normal">24 janurary 2024</p>
-//                             </div>
-//                         </div>
-//                         <div>
-//                             <h2 class="mulish-font text-xl font-extrabold">What will a mars habitat force that
-//                                 impact in our daily life</h2>
-//                             <p class="mulish-font text-base font-normal">Yes, you can run unit tests and view the
-//                                 results directly within the app</p>
-//                         </div>
-//                     </div>
-//                     <div class="flex items-center">
-//                         <div><img src="./images/author.png" alt=""></div>
-//                         <div class="">
-//                             <h3 class="mulish-font text-base font-bold">Dianne Russell</h3>
-//                             <p class="mulish-font text-sm font-normal">ROR Devoloper</p>
-//                         </div>
-//                     </div>
-//                 </div>
-// `
-// latestPostsContainer.appendChild(div);
 
 
 latestPosts();
