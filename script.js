@@ -1,5 +1,4 @@
 /* const allMarkBtn = document.querySelectorAll('.mark-btn'); */
-const inputBtn=document.getElementById('input-btn');
 
 const markAsRead = document.getElementById('markCount');
 
@@ -11,12 +10,6 @@ const markedPostContaier = document.getElementById('markedPostContainer');
 const postBeforeMarkContainer = document.getElementById('post-before-mark-container');
 const latestPostsContainer = document.getElementById('latest-posts-container');
 
-inputBtn.addEventListener('click',()=>{
-    const inputArea=document.getElementById('input-area')
-    const inputText=inputArea.value;
-    console.log(inputText);
-})
-
 const loadPosts = async () => {
 
     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts');
@@ -25,13 +18,14 @@ const loadPosts = async () => {
     // console.log(allPosts);
 
     allPosts.forEach((post) => {
+
         // console.log(post);
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="flex bg-[#797DFC1A] gap-2 p-2">
                                 <div class="">
                                     <div class="">
-                                        <div class="max-w-3 min-h-3 lg:max-w-6 lg:min-h-6 rounded-full bg-green-600">
+                                        <div class="is-active max-w-3 min-h-3 lg:max-w-6 lg:min-h-6 rounded-full bg-green-600">
                                         </div>
                                         <img class="w-[100px] rounded-full" src="${post.image}" alt="">
                                     </div>
@@ -91,7 +85,22 @@ const loadPosts = async () => {
                             </div>
         `
         postBeforeMarkContainer.appendChild(div);
+        
+        const inputBtn = document.getElementById('input-btn');
+        inputBtn.addEventListener('click', () => {
+            const inputArea = document.getElementById('input-area')
+            const inputText = inputArea.value;
+            const postCategory=post.category;
+            console.log(inputText,postCategory)
+            if (inputText==postCategory) {
+                console.log('same');
+            }
+            else{
+                console.log('not same');
+            }
+        })
     });
+
 
     const allMarkBtn = document.querySelectorAll('.mark-btn');
     allMarkBtn.forEach((post) => {
@@ -105,7 +114,7 @@ const loadPosts = async () => {
             const postView = document.getElementsByClassName('post-view');
             console.log(postTitle.innerText);
             console.log(postView.innerText);
-         
+
             const postTitleText = postTitle.innerText;
             const postViewNum = postView.innerText;
             // console.log(postTitleText);
